@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/settings-schema.json",
+  "hooks": {
+    "SubagentStop": [
+      {
+        "description": "Workflow DM - Orchestrates autonomous multi-agent workflows",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \".claude/hooks/workflow_dm.py\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "description": "Test Checker - Monitors test execution and results",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \".claude/hooks/test_checker.py\"",
+            "timeout": 3000
+          }
+        ]
+      }
+    ]
+  }
+}

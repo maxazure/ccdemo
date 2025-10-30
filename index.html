@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Mode Selection Modal -->
+    <div id="modeSelectionModal" class="modal">
+        <div class="modal-content">
+            <h2>Choose Game Mode</h2>
+            <div class="mode-buttons">
+                <button id="twoPlayerBtn" class="mode-btn">2 Players</button>
+                <button id="aiPlayerBtn" class="mode-btn">vs AI</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Configuration Modal -->
+    <div id="aiConfigModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>AI Configuration</h2>
+            <div class="config-section">
+                <h3>Difficulty</h3>
+                <div class="button-group">
+                    <button class="difficulty-btn active" data-difficulty="EASY">Easy</button>
+                    <button class="difficulty-btn" data-difficulty="MEDIUM">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="HARD">Hard</button>
+                </div>
+            </div>
+            <div class="config-section">
+                <h3>Play As</h3>
+                <div class="button-group">
+                    <button class="player-btn active" data-player="X">X (First)</button>
+                    <button class="player-btn" data-player="O">O (Second)</button>
+                </div>
+            </div>
+            <button id="startGameBtn" class="btn btn-primary">Start Game</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+
+        <!-- Game Info Display -->
+        <div class="game-info" id="gameInfo"></div>
+
+        <!-- Game Status Display -->
+        <div class="status" id="gameStatus">Player X's Turn</div>
+
+        <!-- Game Board -->
+        <div class="game-board" id="gameBoard">
+            <div class="cell" data-cell-index="0"></div>
+            <div class="cell" data-cell-index="1"></div>
+            <div class="cell" data-cell-index="2"></div>
+            <div class="cell" data-cell-index="3"></div>
+            <div class="cell" data-cell-index="4"></div>
+            <div class="cell" data-cell-index="5"></div>
+            <div class="cell" data-cell-index="6"></div>
+            <div class="cell" data-cell-index="7"></div>
+            <div class="cell" data-cell-index="8"></div>
+        </div>
+
+        <!-- Score Panel -->
+        <div class="score-panel">
+            <h2>Score Board</h2>
+            <div class="scores">
+                <div class="score-item">
+                    <span class="score-label" id="scoreLabelX">Player X:</span>
+                    <span class="score-value" id="scoreX">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label" id="scoreLabelO">Player O:</span>
+                    <span class="score-value" id="scoreO">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Draws:</span>
+                    <span class="score-value" id="scoreDraws">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button class="btn btn-primary" id="newGameBtn">New Game</button>
+            <button class="btn btn-secondary" id="resetScoresBtn">Reset Scores</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
